@@ -4,7 +4,7 @@ PREFIX ?= /usr/local
 all: install
 
 install: build
-	@echo "Installing node-filerix..."
+	@echo "Installing python-filerix..."
 	cmake --install build --prefix=$(PREFIX) || { echo "Installation failed"; exit 1; }
 	@echo "Installation complete!"
 
@@ -35,7 +35,7 @@ check-vcpkg:
 
 uninstall:
 	@echo "Removing installed files..."
-	rm -f $(PREFIX)/lib64/node_modules/filerix/filerix.node
+	rm -rf $(PREFIX)/lib64/python*/site-packages/python_filerix*
 	@echo "Uninstallation complete!"
 
 clean:
